@@ -13,4 +13,9 @@ def gaussian_blur(img, kernel_size):
 image = cv2.imread('road1.jpg')
 height, width = image.shape[:2]
 
-print(image.shape)
+gray_image = grayscale(image)
+blur_image = gaussian_blur(image, 3)    #blur setting
+canny_image = canny(blur_image, 70, 210)    #recommend 1:2 or 1:3
+
+cv2.imshow("result", canny_img)
+cv2.waitKey(0)
